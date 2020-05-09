@@ -17,23 +17,4 @@ spec:
     repository: https://stefanprodan.github.io/podinfo
     name: podinfo
     version: 3.2.0
----
-apiVersion: helm.fluxcd.io/v1
-kind: HelmRelease
-metadata:
-  name: podinfo
-  namespace: vosa-staging
-spec:
-  forceUpgrade: false
-  resetValues: true
-  timeout: 300
-  wait: true
-  maxHistory: 10
-  rollback:
-    enable: true
-    retry: true
-    maxRetries: 2
-  chart:
-    repository: https://stefanprodan.github.io/podinfo
-    name: podinfo
-    version: 3.2.0
+
