@@ -22,4 +22,4 @@ spec:
   valuesFrom:
   - secretKeyRef:
       name: my-secrets
-      key: my-secret-name
+      key: mySecretName
