@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: example-deployment
+spec:
+  containers:
+  - name: nginx
+    image: nginx
+    env:
+    - name: MY_SECRET_NAME
+      valueFrom:
+        secretKeyRef:
+          name: my-secret-name
+          key: my-secret-key

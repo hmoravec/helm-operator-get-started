@@ -23,3 +23,23 @@ spec:
 #  - secretKeyRef:
 #      name: my-secretname
 #      key: mysecretkey
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: example-chart
+  namespace: vosa-develop
+spec:
+  forceUpgrade: false
+  resetValues: true
+  timeout: 300
+  wait: true
+  maxHistory: 10
+  rollback:
+    enable: true
+    retry: true
+    maxRetries: 2
+  chart:
+    git: git@github.com:hmoravec/helm-operator-get-started
+    path: kubernetes/charts/example-chart
+    ref: master

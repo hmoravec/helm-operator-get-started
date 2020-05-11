@@ -1,0 +1,12 @@
+# There is not CRD in Terraform Kubernetes provider yet:
+# https://github.com/terraform-providers/terraform-provider-kubernetes/issues/215
+#
+# We deploy it as a Helm chart instead as recommended in Method 2 in Helm docs:
+# https://helm.sh/docs/chart_best_practices/custom_resource_definitions/
+#
+# Source:
+# https://raw.githubusercontent.com/fluxcd/helm-operator/1.0.1/deploy/crds.yaml
+
+apiVersion: v1
+name: example-chart
+version: 1.0.0
