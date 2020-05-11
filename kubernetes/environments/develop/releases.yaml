@@ -17,8 +17,8 @@ spec:
     repository: https://stefanprodan.github.io/podinfo
     name: podinfo
     version: 3.2.0
-  values:
-    message: Hello, world!
+#  values:
+#    message: Hello, world!
   valuesFrom:
   - secretKeyRef:
       name: mysecretname
