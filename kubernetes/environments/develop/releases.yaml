@@ -19,7 +19,7 @@ spec:
     version: 3.2.0
 #  values:
 #    message: Hello, world!
-  valuesFrom:
-  - secretKeyRef:
-      name: mysecretname
-      key: mysecretkey
+#  valuesFrom:
+#  - secretKeyRef:
+#      name: my-secretname
+#      key: mysecretkey
