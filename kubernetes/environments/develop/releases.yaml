@@ -1,7 +1,7 @@
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
-  name: podinfo3
+  name: podinfo
   namespace: vosa-develop
 spec:
   forceUpgrade: false
