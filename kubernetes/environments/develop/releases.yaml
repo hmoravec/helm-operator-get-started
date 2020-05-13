@@ -1,29 +1,25 @@
-apiVersion: helm.fluxcd.io/v1
-kind: HelmRelease
-metadata:
-  name: podinfo
-  namespace: vosa-develop
-spec:
-  forceUpgrade: false
-  resetValues: true
-  timeout: 300
-  wait: true
-  maxHistory: 10
-  rollback:
-    enable: true
-    retry: true
-    maxRetries: 2
-  chart:
-    repository: https://stefanprodan.github.io/podinfo
-    name: podinfo
-    version: 3.2.0
+#apiVersion: helm.fluxcd.io/v1
+#kind: HelmRelease
+#metadata:
+#  name: podinfo
+#  namespace: vosa-develop
+#spec:
+#  forceUpgrade: false
+#  resetValues: true
+#  timeout: 300
+#  wait: true
+#  maxHistory: 10
+#  rollback:
+#    enable: true
+#    retry: true
+#    maxRetries: 2
+#  chart:
+#    repository: https://stefanprodan.github.io/podinfo
+#    name: podinfo
+#    version: 3.2.0
 #  values:
 #    message: Hello, world!
-#  valuesFrom:
-#  - secretKeyRef:
-#      name: my-secretname
-#      key: mysecretkey
----
+#---
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
@@ -43,3 +39,5 @@ spec:
     git: git@github.com:hmoravec/helm-operator-get-started
     path: kubernetes/charts/example-chart
     ref: master
+  values:
+    myMessage: "Hello, world, from HelmRelease!"
