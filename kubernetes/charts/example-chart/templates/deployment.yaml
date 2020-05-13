@@ -17,7 +17,7 @@ spec:
       image: busybox
       args: [
         /bin/sh, -c,
-        'while true; do echo "$(date) Secret: $(MY_SECRET_NAME). Message: $(MY_MESSAGE)."; sleep 2; done'
+        'while true; do echo "$(date) Secret: $(MY_SECRET_NAME). Message: $(MY_MESSAGE)"; sleep 2; done'
       ]
       env:
         - name: MY_SECRET_NAME

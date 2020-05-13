@@ -1,0 +1,29 @@
+# https://hub.helm.sh/charts/stable/prometheus-operator
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: prometheus-operator
+  namespace: cluster-monitoring
+spec:
+  forceUpgrade: false
+  resetValues: true
+  timeout: 300
+  wait: true
+  maxHistory: 10
+  rollback:
+    enable: true
+    retry: true
+    maxRetries: 2
+  chart:
+    repository: https://kubernetes-charts.storage.googleapis.com
+    name: prometheus-operator
+    version: 8.13.7
+  values:
+    # https://github.com/helm/charts/tree/master/stable/prometheus-operator#running-on-private-gke-clusters
+    prometheusOperator:
+      admissionWebhooks:
+        enabled: false
+    prometheus:
+      prometheusSpec:
+        retentionSize: 1Gi
+        retention: 1d
