@@ -3,7 +3,7 @@ apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
   name: prometheus-operator
-  namespace: vosa-monitoring
+  namespace: vosa-develop
 spec:
   forceUpgrade: false
   resetValues: true
