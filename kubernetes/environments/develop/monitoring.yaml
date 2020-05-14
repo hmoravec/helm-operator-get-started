@@ -26,6 +26,9 @@ spec:
       prometheusSpec:
         retentionSize: 1Gi
         retention: 1d
+        resources:
+          requests:
+            cpu: 0
     coreDns:
       enabled: false
     kubeApiServer:
